@@ -18,7 +18,7 @@ const App = () => {
         fetchProducts();
     }
     const deleteProduct = async (id)=>{
-        const res = await API.delete(`/:${id}`)  
+        const res = await API.delete(`/${id}`)  
         fetchProducts()
     }
   return (
