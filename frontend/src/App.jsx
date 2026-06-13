@@ -13,9 +13,9 @@ const App = () => {
         fetchProducts()
     },[])
 
-    const addProducts = async (data)=>{
-        const res = await API.post('/')
-        fetchProducts(data)
+    const addProducts = async (data) => {
+        await API.post('/', data);
+        fetchProducts();
     }
     const deleteProduct = async (id)=>{
         const res = await API.delete(`/:${id}`)
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div>
         <h1>mern fullstack CURD on ECOMM</h1>
-        <ProductForm addProducts = {addProducts} />
+        <ProductForm addProduct = {addProducts} />
         <ProductList products = {products} 
         deleteProduct = {deleteProduct}/>
     </div>
